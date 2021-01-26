@@ -1,0 +1,19 @@
+{
+    "rarities": [    
+        {
+            "rarity": "Normal"
+        },
+        {
+            "rarity": "Uncommon"
+        },
+        {
+            "rarity": "Rare"
+        },
+        {
+            "rarity": "Heroic"
+        },
+        {
+            "rarity": "Epic"
+        }
+    ]
+}

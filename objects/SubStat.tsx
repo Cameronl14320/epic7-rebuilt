@@ -37,8 +37,8 @@ export class SubStat {
 }
 
 function createSubArray() : SubStat[] {
-    var array : SubStat[] = [];
-    var jsonArray : any[] = [];
+    let array : SubStat[] = [];
+    let jsonArray : any[] = [];
 
     Object.keys(substats.substats).forEach(key => jsonArray.push({name: substats.substats[key].name, min: substats.substats[key].min, max: substats.substats[key].max}))
     jsonArray.forEach(element => {array.push(new SubStat(element.name, element.min, element.max));});

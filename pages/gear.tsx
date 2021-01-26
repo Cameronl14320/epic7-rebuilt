@@ -2,9 +2,11 @@ import GearSelection from '../objects/GearSelection'
 import GearSettings from '../objects/GearSettings'
 import {SubStat, SubArray} from '../objects/SubStat'
 import { Box } from 'rebass'
+import enhanceSelect from '../components/gear/enhanceSelect'
+import raritySelect from '../components/gear/raritySelect'
 
-const selection = new GearSelection();
-const settings = new GearSettings(0, 0 ,0);
+const selection : GearSelection = new GearSelection();
+const settings : GearSettings = new GearSettings(0, 0 ,0);
 
 const gearStyle = {
     wrapper: {
@@ -29,10 +31,10 @@ export default function gear(props) {
             <Box id="gear-center-container" sx={gearStyle.centerContainer}>
                 <Box id="gear-grid" sx={gearStyle.grid}>
                     <Box id="gear-grid-row-1">
-                        <Box id="gear-grid-rarity-select">rarity</Box>            
+                        <Box id="gear-grid-rarity-select">{raritySelect({settings})}</Box>            
                     </Box>    
                     <Box id="gear-grid-row-2">
-                        <Box id="gear-grid-enhance-select">enhance</Box>
+                        <Box id="gear-grid-enhance-select">{enhanceSelect({settings})}</Box>
                     </Box>    
                     <Box id="gear-grid-row-3">
                         <Box id="gear-grid-substat-select">substat</Box>
