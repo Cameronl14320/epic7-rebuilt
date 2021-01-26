@@ -21,6 +21,9 @@ const gearStyle = {
     grid: {
         display: 'grid'
     },
+    gridRow: {
+        margin: '5px',
+    },
     compute: {
         justifyContent: 'center',
         display: 'flex',
@@ -33,13 +36,13 @@ export default function gear(props) {
             <Box id="gear-center-container" sx={gearStyle.centerContainer}>
                 <Box id="gear-grid" sx={gearStyle.grid}>
                     <Box id="gear-grid-row-1">
-                        <Box id="gear-grid-rarity-select">{raritySelect({settings})}</Box>            
+                        <Box id="gear-grid-rarity-select" sx={gearStyle.gridRow}>{raritySelect({settings})}</Box>            
                     </Box>    
                     <Box id="gear-grid-row-2">
-                        <Box id="gear-grid-enhance-select">{enhanceSelect({settings})}</Box>
+                        <Box id="gear-grid-enhance-select" sx={gearStyle.gridRow}>{enhanceSelect({settings})}</Box>
                     </Box>    
                     <Box id="gear-grid-row-3">
-                        <Box id="gear-grid-substat-select">{substatSelect({selection})}</Box>
+                        <Box id="gear-grid-substat-select" sx={gearStyle.gridRow}>{substatSelect({selection})}</Box>
                     </Box>    
                 </Box>
                 <Box id="gear-compute" sx={gearStyle.compute}>

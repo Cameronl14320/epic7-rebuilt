@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box } from 'rebass'
 import Link from 'next/link'
-import colors from '../styles/colors'
+import { Color } from '../styles/theme'
 
 const headerStyle = {
     header: {
-        background: colors.theme.primary,
-        color: colors.theme.secondarybeta,
+        background: Color.theme.primary,
+        color: Color.theme.secondarybeta,
         padding: '20px 0px 20px 10px',
     },
     header_layout: {
@@ -16,7 +16,7 @@ const headerStyle = {
         py: '5px',
     },
     header_buttons: {
-        background: colors.theme.primary,
+        background: Color.theme.primary,
         margin: [1, 2],
         fontSize: [2, 3, 4],
         display: 'inline',
@@ -25,7 +25,7 @@ const headerStyle = {
         overflow: 'hidden',
         fontWeight: 'bold' as 'bold',
         ':hover': {
-            color: colors.theme.secondary,
+            color: Color.theme.secondary,
         },
     },
 }

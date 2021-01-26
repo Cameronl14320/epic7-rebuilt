@@ -2,12 +2,17 @@ import GearSettings from '../../objects/GearSettings'
 import { Box } from 'rebass'
 import settings from '../../data/settings'
 import { RarityArray } from '../../objects/RarityArray'
+import { Button, Color } from '../../styles/theme'
 
 const maxRarity = settings.maxRarity;
 
 const rarityStyle = {
-    display: 'inline',
-    mx: '5px',
+    display: 'inline-flex',
+    textAlign: 'center',
+    mx: Button.margin,
+    padding: Button.padding,
+    borderRadius: Button.borderRadius,
+    color: Color.theme.secondary,
 }
 
 export default function raritySelect(props : {settings : GearSettings}) {
@@ -15,9 +20,9 @@ export default function raritySelect(props : {settings : GearSettings}) {
     
     var rarityButtons = [];
     for (let n = 0; n < maxRarity; n++) {
+        let color : string = RarityArray[n].color;
         rarityButtons.push(
-            <Box key={"rarity-select-button-" + n} sx={rarityStyle}>
-                {RarityArray[n]}
+            <Box key={"rarity-select-button-" + n} sx={rarityStyle} style={{background: color}}>
             </Box>
         )
     }

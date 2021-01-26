@@ -1,12 +1,18 @@
 import GearSettings from '../../objects/GearSettings'
 import { Box } from 'rebass'
 import settings from '../../data/settings'
+import { Button, Color } from '../../styles/theme'
 
 const maxEnhance = settings.maxEnhance;
 
 const enhanceStyle = {
-    display: 'inline',
-    mx: '5px',
+    display: 'inline-flex',
+    textAlign: 'center',
+    mx: Button.margin,
+    padding: Button.padding,
+    borderRadius: Button.borderRadius,
+    background: Color.theme.primary,
+    color: Color.theme.secondary,
 }
 
 export default function enhanceSelect(props : {settings : GearSettings}) {

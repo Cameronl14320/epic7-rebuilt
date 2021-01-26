@@ -1,19 +1,29 @@
 {
     "rarities": [    
         {
-            "rarity": "Normal"
+            "rarity": "Normal",
+            "color": "gray",
+            "value": 0
         },
         {
-            "rarity": "Uncommon"
+            "rarity": "Uncommon",
+            "color": "green",
+            "value": 1
         },
         {
-            "rarity": "Rare"
+            "rarity": "Rare",
+            "color": "blue",
+            "value": 2
         },
         {
-            "rarity": "Heroic"
+            "rarity": "Heroic",
+            "color": "purple",
+            "value": 3
         },
         {
-            "rarity": "Epic"
+            "rarity": "Epic",
+            "color": "red",
+            "value": 4
         }
     ]
 }
