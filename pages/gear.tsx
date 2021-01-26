@@ -4,6 +4,7 @@ import {SubStat, SubArray} from '../objects/SubStat'
 import { Box } from 'rebass'
 import enhanceSelect from '../components/gear/enhanceSelect'
 import raritySelect from '../components/gear/raritySelect'
+import substatSelect from '../components/gear/substatSelect'
 
 const selection : GearSelection = new GearSelection();
 const settings : GearSettings = new GearSettings(0, 0 ,0);
@@ -21,6 +22,7 @@ const gearStyle = {
         display: 'grid'
     },
     compute: {
+        justifyContent: 'center',
         display: 'flex',
     }
 }
@@ -37,11 +39,13 @@ export default function gear(props) {
                         <Box id="gear-grid-enhance-select">{enhanceSelect({settings})}</Box>
                     </Box>    
                     <Box id="gear-grid-row-3">
-                        <Box id="gear-grid-substat-select">substat</Box>
+                        <Box id="gear-grid-substat-select">{substatSelect({selection})}</Box>
                     </Box>    
                 </Box>
                 <Box id="gear-compute" sx={gearStyle.compute}>
-                    456
+                    <Box>
+                        Compute
+                    </Box>
                 </Box>
             </Box>
         </Box>        
