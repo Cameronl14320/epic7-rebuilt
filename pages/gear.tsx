@@ -9,7 +9,8 @@ const settings = new GearSettings(0, 0 ,0);
 const gearStyle = {
     wrapper: {
         display: 'flex',
-        justifyContent: "center",
+        justifyContent: 'center',
+        textAlign: 'center',
     },
     centerContainer: {
 
@@ -18,7 +19,7 @@ const gearStyle = {
         display: 'grid'
     },
     compute: {
-        display: 'flex'
+        display: 'flex',
     }
 }
 
@@ -27,9 +28,15 @@ export default function gear(props) {
         <Box id="gear-wrapper" sx={gearStyle.wrapper}>
             <Box id="gear-center-container" sx={gearStyle.centerContainer}>
                 <Box id="gear-grid" sx={gearStyle.grid}>
-                    <Box id="gear-grid-row-1"></Box>    
-                    <Box id="gear-grid-row-2"></Box>    
-                    <Box id="gear-grid-row-3"></Box>    
+                    <Box id="gear-grid-row-1">
+                        <Box id="gear-grid-rarity-select">rarity</Box>            
+                    </Box>    
+                    <Box id="gear-grid-row-2">
+                        <Box id="gear-grid-enhance-select">enhance</Box>
+                    </Box>    
+                    <Box id="gear-grid-row-3">
+                        <Box id="gear-grid-substat-select">substat</Box>
+                    </Box>    
                 </Box>
                 <Box id="gear-compute" sx={gearStyle.compute}>
                     456
