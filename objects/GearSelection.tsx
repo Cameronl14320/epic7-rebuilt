@@ -1,17 +1,13 @@
 // Stores the selected sub stats from Gear
-import GearSubStat from './GearSubStat'
-
+import { SubStat } from './SubStat'
 
 export default class {
     
     private maxSelected : number = 4;
-    private selected : GearSubStat[] = [];
+    private selected : SubStat[] = [];
 
-    constructor() {
-    }
-
-    // Checks whether a GearSubStat is already selected
-    private getMatch(selection : GearSubStat) {
+    // Checks whether a SubStat is already selected
+    private getMatch(selection : SubStat) {
         for (let n = 0; n < this.selected.length; n++) {
             if (this.selected[n] == selection) {
                 return true;
@@ -22,18 +18,16 @@ export default class {
     }
 
     // Adds selection to the selected GearSubStats if it doesn't exist
-    public addSelection(selection : GearSubStat) {
+    public addSelection(selection : SubStat) {
         if (this.selected.length < this.maxSelected && !this.getMatch(selection)) {
             this.selected.push(selection);
         }
     }
 
     // Removes selection from the selected GearSubStats if it exists
-    public removeSelection(selection : GearSubStat) {
+    public removeSelection(selection : SubStat) {
         if (this.getMatch(selection)) {
             this.selected.splice(this.selected.indexOf(selection), 1);
         }
     }
-
-
 }

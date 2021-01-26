@@ -1,6 +1,7 @@
 // This is the object form for each individual substat
+import substats from '../data/substats.json'
 
-export default class {
+export class SubStat {
 
     public name : string;
     private min : number[];
@@ -34,3 +35,15 @@ export default class {
         }
     }
 }
+
+function createSubArray() : SubStat[] {
+    var array : SubStat[] = [];
+    var jsonArray : any[] = [];
+
+    Object.keys(substats.substats).forEach(key => jsonArray.push({name: substats.substats[key].name, min: substats.substats[key].min, max: substats.substats[key].max}))
+    jsonArray.forEach(element => {array.push(new SubStat(element.name, element.min, element.max));});
+    
+    return array;
+}
+
+export const SubArray : SubStat[] = createSubArray();
