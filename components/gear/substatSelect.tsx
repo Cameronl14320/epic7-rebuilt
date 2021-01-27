@@ -14,8 +14,12 @@ const subSelectStyle = {
     color: Color.theme.secondary,
 }
 
-export default function substatSelect(props : {selection : GearSelection}) {
-    var selected : GearSelection = props.selection;
+interface substatProps {
+    substats : GearSelection
+}
+
+export default function SubstatSelect(props : substatProps) {
+    var selected : GearSelection = props.substats;
 
     var subSelectButtons = [];
     for (let n = 0; n < SubArray.length; n++) {

@@ -13,16 +13,24 @@ const enhanceStyle = {
     borderRadius: Button.borderRadius,
     background: Color.theme.primary,
     color: Color.theme.secondary,
+    ":hover": {
+        cursor: "pointer",
+    }
 }
 
-export default function enhanceSelect(props : {settings : GearSettings}) {
-    var settings : GearSettings = props.settings;
+export interface EnhanceSelectProps {
+    selectedEnhance: number
+    onSelect: (enhance: number) => void
+}
 
-    var enhanceButtons = []
-    for (let n = 0; n < maxEnhance; n++) {
-        let display : number = 3 * (n + 1);
-        enhanceButtons.push(
-            <Box key={"enhance-select-button-" + n} sx={enhanceStyle}>
+export default function EnhanceSelect(props : EnhanceSelectProps) {
+    const { selectedEnhance, onSelect } = props;
+
+    var enhanceSelection = []
+    for (let n = 0; n <= maxEnhance; n++) {
+        let display : number = 3 * n;
+        enhanceSelection.push(
+            <Box key={"enhance-select-button-" + n} sx={enhanceStyle} onClick={() => {onSelect(n)}}>
                 {display}
             </Box>
         )
@@ -30,7 +38,7 @@ export default function enhanceSelect(props : {settings : GearSettings}) {
 
     return (
         <>
-            {enhanceButtons}
+            {enhanceSelection}
         </>
     )
 }
