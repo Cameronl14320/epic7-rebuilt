@@ -6,11 +6,13 @@ export class SubStat {
     public name : string;
     private min : number[];
     private max : number[];
+    private type : string;
 
-    constructor(name : string, min : number[], max : number[]) {
+    constructor(name : string, min : number[], max : number[], type : string) {
         this.name = name;
         this.min = min;
         this.max = max;
+        this.type = type;
     }
 
     // Return minimum enhancement given a tier
@@ -40,8 +42,8 @@ function createSubArray() : SubStat[] {
     let array : SubStat[] = [];
     let jsonArray : any[] = [];
 
-    Object.keys(substats.substats).forEach(key => jsonArray.push({name: substats.substats[key].name, min: substats.substats[key].min, max: substats.substats[key].max}))
-    jsonArray.forEach(element => {array.push(new SubStat(element.name, element.min, element.max));});
+    Object.keys(substats).forEach(key => jsonArray.push({name: substats[key].name, min: substats[key].min, max: substats[key].max}))
+    jsonArray.forEach(element => {array.push(new SubStat(element.name, element.min, element.max, element.type));});
     
     return array;
 }
