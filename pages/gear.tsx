@@ -5,6 +5,7 @@ import { useState } from 'react'
 import EnhanceSelect from '../components/gear/enhance/EnhanceSelect'
 import SubstatSelect from '../components/gear/substat/SubstatSelect'
 import RaritySelect from '../components/gear/rarity/RaritySelect'
+import calcMinMax from '../data/calculation/calcMinMax'
 
 
 const gearStyle = {
