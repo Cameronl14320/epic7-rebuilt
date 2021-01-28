@@ -2,7 +2,7 @@ import GearSelection from '../objects/GearSelection'
 import { Rarities, Rarity } from '../objects/Rarity'
 import { Box } from 'rebass'
 import { useState } from 'react'
-import EnhanceSelect from '../components/gear/EnhanceSelect'
+//import EnhanceSelect from '../components/gear/EnhanceSelect'
 import SubstatSelect from '../components/gear/SubstatSelect'
 import { RaritySelect } from '../components/gear/Rarity/RaritySelect'
 
@@ -47,7 +47,7 @@ export default function gear(props) {
                         </Box>
                     </Box>
                     <Box id="gear-grid-row-2" sx={gearStyle.gridRow}>
-                        <EnhanceSelect selectedEnhance={selectedEnhance} onSelect={setEnhance} />
+                        {/*<EnhanceSelect selectedEnhance={selectedEnhance} onSelect={setEnhance} />*/}
                     </Box>
                     <Box id="gear-grid-row-3" sx={gearStyle.gridRow}>
                         <SubstatSelect substats={selectedSubstats}/>
