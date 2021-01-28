@@ -1,37 +1,45 @@
-import {RaritySelectProps} from './RaritySelect'
-import { Rarity } from '../../../objects/Rarity';
+import { RaritySelectProps } from './RaritySelect'
+import { Rarities, Rarity, RarityToColor } from '../../../objects/Rarity';
 import { Button, Color } from '../../../styles/theme'
 import { Box } from 'rebass'
+import { Label } from '@rebass/forms'
 
 export interface RarityButtonProps {
-    selectProps : RaritySelectProps;
-    rarity : Rarity;
+    inputName: string
+    rarityName: string
+    selected: boolean
+    onClick: () => void
 }
 
 const rarityStyle = {
+    ...Button,
     display: 'inline-flex',
     textAlign: 'center',
-    mx: Button.margin,
-    width: ['75px', '50px', '25px'],
-    height: ['75px', '50px', '25px'],
-    padding: Button.padding,
-    borderRadius: Button.borderRadius,
     color: Color.theme.secondary,
+    appearance: 'none',
     ":hover": {
         cursor: "pointer",
     }
 }
 
-export default function RarityButton(props : RarityButtonProps) {
-    const { selectedRarity, onSelect } = props.selectProps;
-    const rarity = props.rarity;
-
-    var color : string = rarity.color;
-    if (rarity === selectedRarity) {
-        color = "black";
-    } 
-
+export default function RarityButton(props: RarityButtonProps) {
+    const { inputName, rarityName, selected, onClick } = props;
     return (
-        <Box id={rarity.name} sx={rarityStyle} style={{background: color}} onClick={() => {onSelect(rarity);}}/>
+        <Box
+            as="input"
+            type="radio"
+            aria-label={rarityName}
+            sx={{
+                ...rarityStyle,
+                backgroundColor: RarityToColor[rarityName]
+            }}
+            name={inputName}
+            id={rarityName}
+            value={rarityName}
+            checked={selected}
+            onChange={onClick}
+        >
+        </Box>
+
     )
 }

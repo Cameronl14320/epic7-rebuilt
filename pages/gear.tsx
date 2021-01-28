@@ -31,10 +31,7 @@ const gearStyle = {
 }
 
 export default function gear(props) {
-    // const [setGeargearSettings = useState(new GearSettings(Rarities[0], 0, 0));
-    // const selection: GearSelection = new GearSelection();
-    // const settings: GearSettings = new GearSettings(Rarities[0], 0, 0);
-    const [selectedRarity, setSelectedRarity] = useState(Rarities[0])
+    const [selectedRarity, setSelectedRarity] = useState(Rarities[0].name)
     const [selectedEnhance, setEnhance] = useState(0);
     const selectedSubstats = new GearSelection();
 
@@ -56,7 +53,7 @@ export default function gear(props) {
                     
                 </Box>
                 <Box id="gear-compute" sx={gearStyle.compute}>
-                    <Box onClick={() => {console.log(selectedRarity.name + " " + selectedEnhance)}}>
+                    <Box onClick={() => {console.log(selectedRarity + " " + selectedEnhance)}}>
                         Compute
                     </Box>
                 </Box>

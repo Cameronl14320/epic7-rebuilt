@@ -7,4 +7,8 @@ export interface Rarity {
     value: number
 }
 
+export const RarityToColor: { [rarity: string]: string} = Object.fromEntries(
+    rarities.map(rarity => [rarity.name, rarity.color])
+);
+
 export const Rarities: Rarity[] = rarities

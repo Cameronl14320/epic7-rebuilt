@@ -7,11 +7,14 @@ import { Button, Color } from '../../../styles/theme'
 const subSelectStyle = {
     display: 'inline-flex',
     textAlign: 'center',
-    mx: Button.margin,
+    margin: Button.mx,
     padding: Button.padding,
     borderRadius: Button.borderRadius,
     background: Color.theme.primary,
     color: Color.theme.secondary,
+    ":hover": {
+        cursor: "pointer",
+    }
 }
 
 interface substatProps {
@@ -19,20 +22,15 @@ interface substatProps {
 }
 
 function sortSubStats() {
-    
+
 }
 
 export default function SubstatSelect(props : substatProps) {
     const { substats } = props
     const subMap = new Map();
 
-    var subSelectButtons = [];
+    var subSelectGrid = [];
     for (let n = 0; n < SubArray.length; n++) {
-        subSelectButtons.push(
-            <Box key={"substat-select-button-" + n} sx={subSelectStyle}>
-                {SubArray[n].name}
-            </Box>
-        )
         var type : string = SubArray[n].type;
         if (subMap.get(type) == undefined) {
             var newType : SubStat[] = []
@@ -41,9 +39,36 @@ export default function SubstatSelect(props : substatProps) {
         subMap.get(type).push(SubArray[n]);
     }
 
+    let currentKey = 0;
+    subMap.forEach((type: SubStat[], key: string) => {
+        var subStatType = [];
+        for(let n = 0; n <  type.length; n++) {
+            subStatType.push(
+                <Box key={"substat-select-button-" + n} sx={subSelectStyle} onClick={() => {
+                    substats.addSelection(type[n]);
+                }}>
+                    {type[n].name}
+                </Box>
+            )
+        }
+        subSelectGrid.push(
+            <Box sx={{
+                display: "flex",
+                gridRow: currentKey,
+                justifyContent: 'center',
+            }}>
+                {subStatType}
+            </Box>
+        )
+        currentKey++;
+    });
+
     return (
-        <>
-            {subSelectButtons}
-        </>
+        <Box sx={{
+            display: "grid"
+        }}>
+            {subSelectGrid}
+
+        </Box>
     )
 }
