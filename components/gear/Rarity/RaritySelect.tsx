@@ -6,7 +6,7 @@ export interface RaritySelectProps {
     onSelect: (rarityName: Rarity) => void
 }
 
-export function RaritySelect(props: RaritySelectProps) {
+export default function RaritySelect(props: RaritySelectProps) {
     const raritySelection = Rarities.map(rarity => ( <RarityButton key={"rarity-select-button-" + rarity.name} selectProps={props} rarity={rarity}/> ));
     return (<>{raritySelection}</>)
 }
