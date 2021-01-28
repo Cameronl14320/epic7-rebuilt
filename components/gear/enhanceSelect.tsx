@@ -1,4 +1,3 @@
-import GearSettings from '../../objects/GearSettings'
 import { Box } from 'rebass'
 import settings from '../../data/settings'
 import { Button, Color } from '../../styles/theme'
@@ -24,7 +23,7 @@ export interface EnhanceSelectProps {
 }
 
 export default function EnhanceSelect(props : EnhanceSelectProps) {
-    const { selectedEnhance, onSelect } = props;
+    const { onSelect } = props;
 
     var enhanceSelection = []
     for (let n = 0; n <= maxEnhance; n++) {

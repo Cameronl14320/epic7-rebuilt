@@ -1,11 +1,9 @@
 import GearSelection from '../objects/GearSelection'
-import GearSettings from '../objects/GearSettings'
-import { SubStat, SubArray } from '../objects/SubStat'
 import { Rarities, Rarity } from '../objects/Rarity'
 import { Box } from 'rebass'
+import { useState } from 'react'
 import EnhanceSelect from '../components/gear/EnhanceSelect'
 import SubstatSelect from '../components/gear/SubstatSelect'
-import { useState } from 'react'
 import { RaritySelect } from '../components/gear/Rarity/RaritySelect'
 
 
