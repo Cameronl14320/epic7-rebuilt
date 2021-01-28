@@ -1,7 +1,7 @@
-import GearSelection from '../../objects/GearSelection'
-import { SubArray, SubStat } from '../../objects/SubStat'
+import GearSelection from '../../../objects/GearSelection'
+import { SubArray, SubStat } from '../../../objects/SubStat'
 import { Box } from 'rebass'
-import { Button, Color } from '../../styles/theme'
+import { Button, Color } from '../../../styles/theme'
 
 
 const subSelectStyle = {

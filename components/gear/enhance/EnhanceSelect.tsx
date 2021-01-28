@@ -1,6 +1,6 @@
 import { Box } from 'rebass'
-import settings from '../../data/settings'
-import { Button, Color } from '../../styles/theme'
+import settings from '../../../data/settings'
+import { Button, Color } from '../../../styles/theme'
 
 const maxEnhance = settings.maxEnhance;
 
