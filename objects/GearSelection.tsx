@@ -17,16 +17,14 @@ export default class {
         }
     }
 
-    // Adds selection to the selected GearSubStats if it doesn't exist
+    /**
+     * Adds selection to the selected GearSubStats if it doesn't exist
+     * If it does exist, remove it instead
+     *  */ 
     public addSelection(selection : SubStat) {
         if (this.selected.length < this.maxSelected && !this.getMatch(selection)) {
             this.selected.push(selection);
-        }
-    }
-
-    // Removes selection from the selected GearSubStats if it exists
-    public removeSelection(selection : SubStat) {
-        if (this.getMatch(selection)) {
+        } else if (this.getMatch(selection)) {
             this.selected.splice(this.selected.indexOf(selection), 1);
         }
     }

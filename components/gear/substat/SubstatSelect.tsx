@@ -18,8 +18,13 @@ interface substatProps {
     substats : GearSelection
 }
 
+function sortSubStats() {
+    
+}
+
 export default function SubstatSelect(props : substatProps) {
-    var selected : GearSelection = props.substats;
+    const { substats } = props
+    const subMap = new Map();
 
     var subSelectButtons = [];
     for (let n = 0; n < SubArray.length; n++) {
@@ -28,6 +33,12 @@ export default function SubstatSelect(props : substatProps) {
                 {SubArray[n].name}
             </Box>
         )
+        var type : string = SubArray[n].type;
+        if (subMap.get(type) == undefined) {
+            var newType : SubStat[] = []
+            subMap.set(type, newType);
+        }
+        subMap.get(type).push(SubArray[n]);
     }
 
     return (

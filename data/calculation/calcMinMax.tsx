@@ -90,7 +90,7 @@ export default function calcMinMax(props : calcSettings) {
         maxValues[i] = maxRoll + (maxRoll * enhanced[i]);
     }
 
-    // Removes the initiall maxRoll in the above for loop, as the extra sub stat(s) is not a base roll.
+    // Removes the initial maxRoll in the above for loop, as the extra sub stat(s) is not a base roll.
     if (values.length > rarity.value) {
         let extraSubs = values.length - rarity.value;
         for (let i = values.length - 1; i > (values.length - extraSubs - 1); i--) {

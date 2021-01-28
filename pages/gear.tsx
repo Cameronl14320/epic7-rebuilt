@@ -56,7 +56,7 @@ export default function gear(props) {
                     
                 </Box>
                 <Box id="gear-compute" sx={gearStyle.compute}>
-                    <Box onClick={() => {console.log(selectedEnhance)}}>
+                    <Box onClick={() => {console.log(selectedRarity.name + " " + selectedEnhance)}}>
                         Compute
                     </Box>
                 </Box>

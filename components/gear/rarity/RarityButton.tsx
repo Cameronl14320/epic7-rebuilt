@@ -12,6 +12,8 @@ const rarityStyle = {
     display: 'inline-flex',
     textAlign: 'center',
     mx: Button.margin,
+    width: ['75px', '50px', '25px'],
+    height: ['75px', '50px', '25px'],
     padding: Button.padding,
     borderRadius: Button.borderRadius,
     color: Color.theme.secondary,
@@ -30,8 +32,6 @@ export default function RarityButton(props : RarityButtonProps) {
     } 
 
     return (
-        <Box id={rarity.name} sx={rarityStyle} style={{background: color}} onClick={() => {onSelect(rarity);}}>
-            {rarity.name}
-        </Box>
+        <Box id={rarity.name} sx={rarityStyle} style={{background: color}} onClick={() => {onSelect(rarity);}}/>
     )
 }
