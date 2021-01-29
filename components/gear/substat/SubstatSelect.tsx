@@ -44,7 +44,7 @@ export default function SubstatSelect(props : substatProps) {
         var subStatType = [];
         for(let n = 0; n <  type.length; n++) {
             subStatType.push(
-                <Box key={"substat-select-button-" + n} sx={subSelectStyle} onClick={() => {
+                <Box key={type[n].name} id={type[n].name} sx={subSelectStyle} onClick={() => {
                     substats.addSelection(type[n]);
                 }}>
                     {type[n].name}
@@ -52,7 +52,7 @@ export default function SubstatSelect(props : substatProps) {
             )
         }
         subSelectGrid.push(
-            <Box sx={{
+            <Box key={key} id={key} sx={{
                 display: "flex",
                 gridRow: currentKey,
                 justifyContent: 'center',
@@ -64,11 +64,10 @@ export default function SubstatSelect(props : substatProps) {
     });
 
     return (
-        <Box sx={{
+        <Box id={"substat-select"} sx={{
             display: "grid"
         }}>
             {subSelectGrid}
-
         </Box>
     )
 }

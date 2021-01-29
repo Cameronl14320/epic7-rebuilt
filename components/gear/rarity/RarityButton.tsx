@@ -8,11 +8,13 @@ export interface RarityButtonProps {
     inputName: string
     rarityName: string
     selected: boolean
-    onClick: () => void
+    onChange: () => void
 }
 
 const rarityStyle = {
     ...Button,
+    width: ['75px', '50px'],
+    height: ['75px', '50px'],
     display: 'inline-flex',
     textAlign: 'center',
     color: Color.theme.secondary,
@@ -23,7 +25,7 @@ const rarityStyle = {
 }
 
 export default function RarityButton(props: RarityButtonProps) {
-    const { inputName, rarityName, selected, onClick } = props;
+    const { inputName, rarityName, selected, onChange } = props;
     return (
         <Box
             as="input"
@@ -37,7 +39,7 @@ export default function RarityButton(props: RarityButtonProps) {
             id={rarityName}
             value={rarityName}
             checked={selected}
-            onChange={onClick}
+            onChange={onChange}
         >
         </Box>
 

@@ -13,7 +13,7 @@ export default function RaritySelect(props: RaritySelectProps) {
             inputName='rarity'
             rarityName={rarity.name}
             selected={rarity.name === props.selectedRarity}
-            onClick={() => props.onSelect(rarity.name)}
+            onChange={() => props.onSelect(rarity.name)}
         />
     ));
     return (<>{raritySelection}</>)

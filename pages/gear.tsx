@@ -40,7 +40,7 @@ export default function gear(props) {
             <Box id="gear-center-container" sx={gearStyle.centerContainer}>
                 <Box id="gear-grid" sx={gearStyle.grid}>
                     <Box id="gear-grid-row-1" sx={gearStyle.gridRow}>
-                        <Box id="gear-grid-rarity-select" sx={{ marginTop: '5px' }}>
+                        <Box id="gear-grid-rarity-select" sx={{marginTop: '5px'}}>
                             <RaritySelect selectedRarity={selectedRarity} onSelect={setSelectedRarity} />
                         </Box>
                     </Box>
