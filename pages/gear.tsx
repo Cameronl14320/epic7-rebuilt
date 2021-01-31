@@ -1,5 +1,5 @@
 import GearSelection from '../objects/GearSelection'
-import { Rarities, Rarity } from '../objects/Rarity'
+import { Rarities, Rarity, RarityToColor } from '../objects/Rarity'
 import { Box } from 'rebass'
 import { useState } from 'react'
 import EnhanceSelect from '../components/gear/enhance/EnhanceSelect'
@@ -22,12 +22,14 @@ const gearStyle = {
         display: 'grid'
     },
     gridRow: {
+        display: 'flex',
+        justifyContent: 'center',
         margin: '5px',
     },
     compute: {
-        justifyContent: 'center',
         display: 'flex',
     }
+
 }
 
 export default function gear(props) {
@@ -40,9 +42,7 @@ export default function gear(props) {
             <Box id="gear-center-container" sx={gearStyle.centerContainer}>
                 <Box id="gear-grid" sx={gearStyle.grid}>
                     <Box id="gear-grid-row-1" sx={gearStyle.gridRow}>
-                        <Box id="gear-grid-rarity-select" sx={{marginTop: '5px'}}>
-                            <RaritySelect selectedRarity={selectedRarity} onSelect={setSelectedRarity} />
-                        </Box>
+                        <RaritySelect selectedRarity={selectedRarity} onSelect={setSelectedRarity} />
                     </Box>
                     <Box id="gear-grid-row-2" sx={gearStyle.gridRow}>
                         {<EnhanceSelect selectedEnhance={selectedEnhance} onSelect={setEnhance} />}
