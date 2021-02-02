@@ -1,6 +1,7 @@
 import { Rarity, Rarities } from '../../../objects/Rarity'
 import RarityButton from './RarityButton'
 import { Box } from 'rebass'
+import { useState } from 'react';
 
 export interface RaritySelectProps {
     selectedRarity: string
@@ -29,6 +30,8 @@ const rarityStyle = {
 }
 
 export default function RaritySelect(props: RaritySelectProps) {
+    const [showSelect, setShow] = useState(false);
+
     const raritySelection = Rarities.map(rarity => (
         <RarityButton
             key={rarity.name}
@@ -41,11 +44,13 @@ export default function RaritySelect(props: RaritySelectProps) {
     return (
         <Box id="rarity-grid" sx={rarityStyle.grid}>
             <Box id="rarity-display" sx={rarityStyle.display}>   
-                <Box id="display" sx={rarityStyle.display.icon}>
+                <Box id="display" sx={rarityStyle.display.icon} onClick={() => setShow(!showSelect)}>
 
                 </Box>
             </Box>
-            <Box id="rarity-select" sx={rarityStyle.select}>
+            <Box id="rarity-select" sx={rarityStyle.select} style={{
+                display: showSelect?"block":"none"
+            }}>
                 {raritySelection}
             </Box>
         </Box>
