@@ -23,9 +23,8 @@ const enhanceStyle = {
 
     slider: {
         sliderStyle: {
-            margin: '5%',
             position: 'relative',
-            width: '90%',
+            width: '100%',
             height: '50px',
         },
         railStyle: {
@@ -82,7 +81,7 @@ export default function EnhanceSelect(props : EnhanceSelectProps) {
             </Handles>
             <Tracks>
                 {({ tracks, getTrackProps }) => (
-                <Box className="slider-tracks">
+                <Box id="slider-tracks">
                     {tracks.map(({ id, source, target }) => (
                     <Track
                         key={id}
@@ -96,7 +95,7 @@ export default function EnhanceSelect(props : EnhanceSelectProps) {
             </Tracks>
             <Ticks values={[0, 3, 6, 9, 12, 15]}>
                 {({ ticks }) => (
-                <Box className="slider-ticks">
+                <Box id="slider-ticks">
                     {ticks.map(tick => (
                     <Tick
                         key={tick.id}
