@@ -23,8 +23,12 @@ const rarityStyle = {
             background: 'black',
             borderRadius: '10px'
         }
+        
     },
     select: {
+        overflowY: 'hidden',
+        transition: "height .15s, opacity .15s",
+        paddingY: '5px',
         my: '5px',
     }
 }
@@ -49,7 +53,9 @@ export default function RaritySelect(props: RaritySelectProps) {
                 </Box>
             </Box>
             <Box id="rarity-select" sx={rarityStyle.select} style={{
-                display: showSelect?"block":"none"
+                visibility: showSelect?"visible":"hidden",
+                height: showSelect?"auto":"0px",
+                opacity: showSelect?"1":"0",
             }}>
                 {raritySelection}
             </Box>
