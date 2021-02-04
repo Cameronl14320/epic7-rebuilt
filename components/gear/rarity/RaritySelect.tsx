@@ -22,8 +22,10 @@ const rarityStyle = {
             height: ['100px'],
             background: 'black',
             borderRadius: '10px'
+        },
+        ":hover": {
+            cursor: "pointer"
         }
-        
     },
     select: {
         overflowY: 'hidden',

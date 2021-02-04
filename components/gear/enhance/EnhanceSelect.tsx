@@ -43,25 +43,28 @@ export interface EnhanceSelectProps {
     onSelect: (enhance: number) => void
 }
 
+const domain: number[] = [0, 15];
+
 const formatTicks = (d: number) => {
     return `${d}`;
   };
-
 
 export default function EnhanceSelect(props : EnhanceSelectProps) {
     const { selectedEnhance, onSelect } = props;
 
     var enhanceSelection = []
 
+    const values = [selectedEnhance];
+
 
     return (
         <Slider
             rootStyle={enhanceStyle.slider.sliderStyle}
-            domain={[0, 15]}
+            domain={domain}
             step={3}
-            values={[0, 3, 6, 9, 12, 15]}
+            values={values}
             mode={1}
-            onChange={() => onSelect}
+            onChange={() => onSelect(values[selectedEnhance])}
         >
             <Rail>
                 {({ getRailProps }) => (
@@ -72,11 +75,16 @@ export default function EnhanceSelect(props : EnhanceSelectProps) {
             <Handles>
 
                 {({ handles, getHandleProps }) => (
-                    <Handle
-                    handle={handles[0]}
-                    domain={[0, 15]}
-                    getHandleProps={getHandleProps}
-                    />
+                    <Box className="slider-handles">
+                        {handles.map(handle => (
+                            <Handle
+                                key={handle.id}
+                                handle={handle}
+                                domain={domain}
+                                getHandleProps={getHandleProps}
+                            />
+                        ))}
+                    </Box>
                 )}
             </Handles>
             <Tracks>
