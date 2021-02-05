@@ -4,6 +4,7 @@ import { Button, Color } from '../../../styles/theme'
 import { Slider, Rail, Handles, Tracks, Ticks } from 'react-compound-slider';
 import { Handle, Track, Tick } from '../../shared/slider'; // example render components
 import React from 'react';
+import { EnhanceSelectProps } from './EnhanceSelect';
 
 const style = {
     slider: {
@@ -24,14 +25,24 @@ const style = {
     }
 }
 
+export interface EnhanceSliderProps {
+    selectedEnhance: number[]
+    onSelect: (enhance: number[]) => void
+}
+
 export default class EnhanceSlider extends React.Component {
-    state = {
+    public state = {
         values: [0],
         domain: [0, settings.maxEnhance]
     }
 
     onChange = (values : number[]) => {
         this.setState({values});
+        console.log(this.state.values)
+    }
+
+    public getValue() {
+        return this.state.values[0];
     }
 
     render() {

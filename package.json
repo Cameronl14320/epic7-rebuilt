@@ -9,12 +9,12 @@
     "prod": "next export"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "@rebass/forms": "^4.0.6",
     "autoprefixer": "^10.2.3",
     "next": "10.0.5",
     "postcss": "^8.2.4",
     "react": "17.0.1",
-    "react-compound-slider": "^3.3.1",
     "react-dom": "17.0.1",
     "rebass": "^4.0.7",
     "tailwindcss": "^2.0.2"
