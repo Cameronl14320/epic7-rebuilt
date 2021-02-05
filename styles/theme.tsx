@@ -7,7 +7,7 @@ export const Color = {
         primarybeta: 'darkgray',
         secondarybeta: 'silver',
         selectedPrimary: 'gold',
-        selectedSecondary: "#84e39d",
+        selectedSecondary: '#84e39d',
     }
 }
 
