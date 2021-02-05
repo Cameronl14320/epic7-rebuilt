@@ -1,7 +1,8 @@
 import { Box } from 'rebass'
 import settings from '../../../data/settings'
 import { Button, Color } from '../../../styles/theme'
-import EnhanceSlider from './EnhanceSlider'
+import Slider from '@material-ui/core/Slider';
+
 
 const maxEnhance = settings.maxEnhance;
 
@@ -22,16 +23,53 @@ const enhanceStyle = {
 }
 
 export interface EnhanceSelectProps {
-    selectedEnhance: number[]
-    onSelect: (enhance: number[]) => void
+    selectedEnhance: number
+    setEnhance: (enhance: number) => void
 }
 
-const domain: number[] = [0, maxEnhance];
+const marks = [
+    {
+        value: 0,
+        label: '0'
+    },
+    {
+        value: 1,
+        label: '3'
+    },
+    {
+        value: 2,
+        label: '6'
+    },
+    {
+        value: 3,
+        label: '9'
+    },
+    {
+        value: 4,
+        label: '12'
+    },
+    {
+        value: 5,
+        label: '15'
+    }
+]
 
 export default function EnhanceSelect(props : EnhanceSelectProps) {
-    const { selectedEnhance, onSelect } = props;
+    const { selectedEnhance, setEnhance } = props;
+
+    const handleChange = (event, newValue) => {
+        setEnhance(newValue)
+    };
 
     return (
-        <EnhanceSlider/>
+
+        <Slider
+            value={selectedEnhance}
+            step={1}
+            min={0}
+            marks={marks}
+            max={settings.maxEnhance}
+            onChange={handleChange}
+        />
     )
 }

@@ -14,7 +14,6 @@ const rarityStyle = {
         justifyContent: 'center',
     },
     display: {
-        my: '5px',
         display: 'flex',
         justifyContent: 'center',
         icon: {
@@ -28,10 +27,10 @@ const rarityStyle = {
         }
     },
     select: {
+        marginTop: '5px',
+        transitionDelay: '0.5s',
         overflowY: 'hidden',
-        transition: "height .15s, opacity .15s",
         paddingY: '5px',
-        my: '5px',
     }
 }
 
@@ -58,6 +57,7 @@ export default function RaritySelect(props: RaritySelectProps) {
                 visibility: showSelect?"visible":"hidden",
                 height: showSelect?"auto":"0px",
                 opacity: showSelect?"1":"0",
+                transition: showSelect?"opacity .15s, height .15s":"opacity .05s, height .15s  ease .1s",
             }}>
                 {raritySelection}
             </Box>
