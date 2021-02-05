@@ -1,7 +1,7 @@
 import { Box } from 'rebass'
 import settings from '../../../data/settings'
 import { Button, Color } from '../../../styles/theme'
-import Slider from '@material-ui/core/Slider';
+import {AlphaSlider} from '../../shared/AlphaSlider'
 
 
 const maxEnhance = settings.maxEnhance;
@@ -62,8 +62,7 @@ export default function EnhanceSelect(props : EnhanceSelectProps) {
     };
 
     return (
-
-        <Slider
+        <AlphaSlider
             value={selectedEnhance}
             step={1}
             min={0}
