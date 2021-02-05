@@ -29,6 +29,7 @@ const gearStyle = {
     },
     compute: {
         display: 'flex',
+        justifyContent: 'center',
     }
 
 }

@@ -1,4 +1,4 @@
-import { Rarity, Rarities } from '../../../objects/Rarity'
+import { Rarity, RarityToColor, Rarities } from '../../../objects/Rarity'
 import RarityButton from './RarityButton'
 import { Box } from 'rebass'
 import { useState } from 'react';
@@ -19,7 +19,6 @@ const rarityStyle = {
         icon: {
             width: ['100px'],
             height: ['100px'],
-            background: 'black',
             borderRadius: '10px'
         },
         ":hover": {
@@ -49,7 +48,7 @@ export default function RaritySelect(props: RaritySelectProps) {
     return (
         <Box id="rarity-grid" sx={rarityStyle.grid}>
             <Box id="rarity-display" sx={rarityStyle.display}>   
-                <Box id="display" sx={rarityStyle.display.icon} onClick={() => setShow(!showSelect)}>
+                <Box id="display" sx={rarityStyle.display.icon} style={{background: RarityToColor[props.selectedRarity]}} onClick={() => setShow(!showSelect)}>
 
                 </Box>
             </Box>
