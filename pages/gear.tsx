@@ -34,7 +34,7 @@ const gearStyle = {
 
 export default function gear(props) {
     const [selectedRarity, setSelectedRarity] = useState(Rarities[0].name)
-    const [selectedEnhance, setEnhance] = useState(0);
+    const [selectedEnhance, setEnhance] = useState([0]);
     const selectedSubstats = new GearSelection();
 
     return (

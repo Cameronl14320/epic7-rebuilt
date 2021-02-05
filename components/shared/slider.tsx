@@ -4,6 +4,7 @@ import {
   GetHandleProps,
   GetTrackProps
 } from 'react-compound-slider';
+import { Color } from '../../styles/theme'
 
 // *******************************************************
 // HANDLE COMPONENT
@@ -60,7 +61,7 @@ export const Track: React.FC<ITrackProps> = ({
       position: 'absolute',
       height: 14,
       zIndex: 1,
-      backgroundColor: '#7aa0c4',
+      backgroundColor: Color.theme.selected,
       borderRadius: 7,
       cursor: 'pointer',
       left: `${source.percent}%`,
