@@ -6,6 +6,7 @@ import EnhanceSelect from '../components/gear/enhance/EnhanceSelect'
 import SubstatSelect from '../components/gear/substat/SubstatSelect'
 import RaritySelect from '../components/gear/rarity/RaritySelect'
 import calcMinMax from '../data/calculation/calcMinMax'
+import { Helmet } from 'react-helmet'
 
 
 const gearStyle = {
@@ -39,6 +40,10 @@ export default function gear(props) {
     const selectedSubstats = new GearSelection();
     return (
         <Box id="gear-wrapper" sx={gearStyle.wrapper}>
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <title>E7 Companion: Gear</title>
+            </Helmet>
             <Box id="gear-center-container" sx={gearStyle.centerContainer}>
                 <Box id="gear-grid" sx={gearStyle.grid}>
                     <Box id="gear-grid-row-1" sx={gearStyle.gridRow}>
