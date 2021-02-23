@@ -34,6 +34,10 @@ const gearStyle = {
 
 }
 
+function calculate(rarity : String, enhance : String) {
+    
+}
+
 export default function gear(props) {
     const [selectedRarity, setRarity] = useState(Rarities[0].name)
     const [selectedEnhance, setEnhance] = useState(0)
@@ -59,7 +63,7 @@ export default function gear(props) {
                     
                 </Box>
                 <Box id="gear-compute" sx={gearStyle.compute}>
-                    <Box onClick={() => {console.log(selectedRarity + " " + selectedEnhance)}}>
+                    <Box onClick={() => {console.log(selectedRarity + " " + selectedEnhance + " " + selectedSubstats.toString())}}>
                         Compute
                     </Box>
                 </Box>

@@ -9,12 +9,11 @@ export default class {
     // Checks whether a SubStat is already selected
     private getMatch(selection : SubStat) {
         for (let n = 0; n < this.selected.length; n++) {
-            if (this.selected[n] == selection) {
+            if (this.selected[n] === selection) {
                 return true;
-            } else {
-                return false;
             }
         }
+        return false;
     }
 
     /**
@@ -27,5 +26,14 @@ export default class {
         } else if (this.getMatch(selection)) {
             this.selected.splice(this.selected.indexOf(selection), 1);
         }
+    }
+
+    public toString() {
+        let string : String = "";
+        
+        for (let n = 0; n < this.selected.length; n++) {
+            string = string + this.selected[n].name + " "
+        }
+        return string;
     }
 }
