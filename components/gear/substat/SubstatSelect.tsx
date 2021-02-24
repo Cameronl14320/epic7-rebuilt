@@ -6,7 +6,7 @@ import SubstatButton from './SubstatButton'
 
 
 interface substatProps {
-    substats : GearSelection
+    selected : GearSelection
 }
 
 function sortSubStats() {
@@ -14,7 +14,7 @@ function sortSubStats() {
 }
 
 export default function SubstatSelect(props : substatProps) {
-    const { substats } = props
+    const { selected } = props
     const subMap = new Map();
 
     var subSelectGrid = [];
@@ -32,7 +32,7 @@ export default function SubstatSelect(props : substatProps) {
         var subStatType = [];
         for(let n = 0; n <  type.length; n++) {
             subStatType.push(
-                <SubstatButton key={type[n].name} substat={type[n]} substats={substats}></SubstatButton>
+                <SubstatButton key={type[n].name} substat={type[n]} substats={selected}></SubstatButton>
             )
         }
         subSelectGrid.push(

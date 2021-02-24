@@ -3,8 +3,7 @@ import { Rarities, Rarity, RarityToColor } from '../objects/Rarity'
 import { Box } from 'rebass'
 import { useState } from 'react'
 import EnhanceSelect from '../components/gear/enhance/EnhanceSelect'
-import SubstatSelect from '../components/gear/substat/SubstatSelect'
-import SubstatDisplay from '../components/gear/substat/SubstatDisplay'
+import SubstatContainer from '../components/gear/substat/SubstatContainer'
 import RaritySelect from '../components/gear/rarity/RaritySelect'
 import calcMinMax from '../data/calculation/calcMinMax'
 import { Helmet } from 'react-helmet'
@@ -59,12 +58,8 @@ export default function gear(props) {
                         {<EnhanceSelect selectedEnhance={selectedEnhance} setEnhance={setEnhance}/>}
                     </Box>
                     <Box id="gear-grid-row-3" sx={gearStyle.gridRow}>
-                        {<SubstatSelect substats={selectedSubstats}/>}
+                        {<SubstatContainer substats={selectedSubstats}/>}
                     </Box>
-                    <Box>
-                        {<SubstatDisplay selected={selectedSubstats}/>}
-                    </Box>
-                    
                 </Box>
                 <Box id="gear-compute" sx={gearStyle.compute}>
                     <Box onClick={() => {console.log(selectedRarity + " " + selectedEnhance + " " + selectedSubstats.toString())}}>
