@@ -4,6 +4,7 @@ import { Box } from 'rebass'
 import { useState } from 'react'
 import EnhanceSelect from '../components/gear/enhance/EnhanceSelect'
 import SubstatSelect from '../components/gear/substat/SubstatSelect'
+import SubstatDisplay from '../components/gear/substat/SubstatDisplay'
 import RaritySelect from '../components/gear/rarity/RaritySelect'
 import calcMinMax from '../data/calculation/calcMinMax'
 import { Helmet } from 'react-helmet'
@@ -59,6 +60,9 @@ export default function gear(props) {
                     </Box>
                     <Box id="gear-grid-row-3" sx={gearStyle.gridRow}>
                         {<SubstatSelect substats={selectedSubstats}/>}
+                    </Box>
+                    <Box>
+                        {<SubstatDisplay selected={selectedSubstats}/>}
                     </Box>
                     
                 </Box>

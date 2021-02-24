@@ -2,6 +2,7 @@ import { Box } from 'rebass'
 import { useState } from 'react'
 import { SubStat } from '../../../objects/SubStat';
 import GearSelection from '../../../objects/GearSelection'
+import SubstatField from './SubstatField'
 import { Button, Color } from '../../../styles/theme'
 
 const subSelectStyle = {

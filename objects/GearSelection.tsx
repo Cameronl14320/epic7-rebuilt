@@ -28,6 +28,10 @@ export default class {
         }
     }
 
+    public getSize() {
+        return this.selected.length - 1;
+    }
+
     public toString() {
         let string : String = "";
         
