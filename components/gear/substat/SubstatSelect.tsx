@@ -32,7 +32,7 @@ export default function SubstatSelect(props : substatProps) {
         var subStatType = [];
         for(let n = 0; n <  type.length; n++) {
             subStatType.push(
-                <SubstatButton substat={type[n]} substats={substats}></SubstatButton>
+                <SubstatButton key={type[n].name} substat={type[n]} substats={substats}></SubstatButton>
             )
         }
         subSelectGrid.push(

@@ -41,8 +41,8 @@ function calculate(rarity : String, enhance : String) {
 export default function gear(props) {
     const [selectedRarity, setRarity] = useState(Rarities[0].name)
     const [selectedEnhance, setEnhance] = useState(0)
+    const [selectedSubstats, setSelected] = useState(new GearSelection());
 
-    const selectedSubstats = new GearSelection();
     return (
         <Box id="gear-wrapper" sx={gearStyle.wrapper}>
             <Helmet>
