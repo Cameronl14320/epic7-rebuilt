@@ -2,20 +2,8 @@ import GearSelection from '../../../objects/GearSelection'
 import { SubArray, SubStat } from '../../../objects/SubStat'
 import { Box } from 'rebass'
 import { Button, Color } from '../../../styles/theme'
+import SubstatButton from './SubstatButton'
 
-
-const subSelectStyle = {
-    display: 'inline-flex',
-    textAlign: 'center',
-    margin: Button.mx,
-    padding: Button.padding,
-    borderRadius: Button.borderRadius,
-    background: Color.theme.primary,
-    color: Color.theme.secondary,
-    ":hover": {
-        cursor: "pointer",
-    }
-}
 
 interface substatProps {
     substats : GearSelection
@@ -44,11 +32,7 @@ export default function SubstatSelect(props : substatProps) {
         var subStatType = [];
         for(let n = 0; n <  type.length; n++) {
             subStatType.push(
-                <Box key={type[n].name} id={type[n].name} sx={subSelectStyle} onClick={() => {
-                    substats.addSelection(type[n]);
-                }}>
-                    {type[n].name}
-                </Box>
+                <SubstatButton substat={type[n]} substats={substats}></SubstatButton>
             )
         }
         subSelectGrid.push(

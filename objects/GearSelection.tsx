@@ -7,7 +7,7 @@ export default class {
     private selected : SubStat[] = [];
 
     // Checks whether a SubStat is already selected
-    private getMatch(selection : SubStat) {
+    public getMatch(selection : SubStat) {
         for (let n = 0; n < this.selected.length; n++) {
             if (this.selected[n] === selection) {
                 return true;
